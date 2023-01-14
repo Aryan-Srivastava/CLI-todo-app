@@ -1,0 +1,28 @@
+{
+  "name": "cli-todo-app",
+  "description": "A simple CLI to manage your tasks",
+  "author": {
+    "name": "Aryan Srivastava",
+    "email": "idfordevaryan@gmail.com"
+  },
+  "main": "task.js",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "keywords": [
+    "cli",
+    "todo",
+    "task",
+    "task-manager"
+  ],
+  "devDependencies": {
+    "jest": "^27.3.1"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "commander": "^9.5.0",
+    "conf": "^10.2.0"
+  }
+}
