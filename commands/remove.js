@@ -5,10 +5,10 @@ function remove(tasks) {
 	const error = chalk.red;
 	let todoList = conf.get("todo-list");
 	if(todoList.length === 0) {
-		console.log(error("No tasks to delete"));
+		console.log(error.bold("Error: ") + error("List is empty. Nothing to delete"));
 		return;
 	} else if(tasks > todoList.length) {
-		console.log(error("Task does not exist"));
+		console.log(error.bold("Error: ") + error("Task does not exist. Please enter a valid task number"));
 		return;
 	}
 	if (todoList) {
