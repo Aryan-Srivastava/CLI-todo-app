@@ -14,22 +14,12 @@ Run `npm install` to install all dependencies.
 
 Executing the command without any arguments, or with a single argument help prints the CLI usage.
 
-```
-$ ./task help
-Usage :-
-$ ./task add 2 hello world    # Add a new item with priority 2 and text "hello world" to the list
-$ ./task ls                   # Show incomplete priority list items sorted by priority in ascending order
-$ ./task del INDEX            # Delete the incomplete item with the given index
-$ ./task done INDEX           # Mark the incomplete item with the given index as complete
-$ ./task help                 # Show usage
-$ ./task report               # Statistics
-```
+![todo help](https://user-images.githubusercontent.com/68139593/212684466-4d1e88d3-d332-4fbb-b9c8-d0fb1f8478bf.jpg)
+
 
 ### 2. List all pending items
 
 Use the ls command to see all the items that are not yet complete, in ascending order of priority.
-
-Every item should be printed on a new line. with the following format
 
 ```
 [index] [task] [priority]
@@ -37,22 +27,18 @@ Every item should be printed on a new line. with the following format
 
 Example:
 
-```
-$ ./task ls
-1. change light bulb [2]
-2. water the plants [5]
-```
+![todo ls](https://user-images.githubusercontent.com/68139593/212684658-9bd8f119-10d2-48f8-bffd-b8849e03f561.jpg)
 
-index starts from 1, this is used to identify a particular task to complete or delete it.
 
 ### 3. Add a new item
 
-Use the add command. The text of the task should be enclosed within double quotes (otherwise only the first word is considered as the item text, and the remaining words are treated as different arguments).
+Use the add command.
 
 ```
-$ ./task add 5 "the thing i need to do"
-Added task: "the thing i need to do" with priority 5
+[command] [priority] [task]
 ```
+
+![todo add](https://user-images.githubusercontent.com/68139593/212685768-be0f6f9d-1758-4234-b10a-2f7a9fe64a98.jpg)
 
 ### 4. Delete an item
 
@@ -63,11 +49,18 @@ $ ./task del 3
 Deleted item with index 3
 ```
 
-Attempting to delete a non-existent item should display an error message.
+![todo delete](https://user-images.githubusercontent.com/68139593/212685865-19600f25-a707-4327-a50a-96d7e56000ca.jpg)
+
+Attempting to delete a non-existent item will display an error message.
 
 ```
 $ ./task del 5
-Error: item with index 5 does not exist. Nothing deleted.
+Error: Task does not exist. Please enter a valid task number
+```
+
+```
+$ ./task del 5
+Error: List is empty. Nothing to delete
 ```
 
 ### 5. Mark a task as completed
@@ -78,26 +71,18 @@ Use the done command to mark an item as completed by its index.
 $ ./task done 1
 Marked item as done.
 ```
+![todo done](https://user-images.githubusercontent.com/68139593/212687280-68eade45-a9fe-4e1b-b426-bfbac113b08f.jpg)
 
-Attempting to mark a non-existed item as completed will display an error message.
-
-```
-$ ./task done 5
-Error: no incomplete item with index 5 exists.
-```
 
 ### 6. Generate a report
 
-Show the number of complete and incomplete items in the list. and the complete and incomplete items grouped together.
+Show the number of complete and pending items in the list. and the complete and incomplete items grouped together.
 
-```
-$ ./task report
-Pending : 2
-1. this is a pending task [1]
-2. this is a pending task with priority [4]
+![todo report](https://user-images.githubusercontent.com/68139593/212687471-d275b9aa-6950-497b-9f53-87e4c2938688.jpg)
 
-Completed : 3
-1. completed task
-2. another completed task
-3. yet another completed task
-```
+
+### 7. Clear List
+
+clear the pending and completed list both.
+
+![todo clear](https://user-images.githubusercontent.com/68139593/212687586-2a73a58c-a03f-4414-86ad-3cfa608127dc.jpg)
