@@ -13,6 +13,10 @@ function add(priority, task) {
 		priority: priority,
 	});
 
+	todoList.sort((a, b) => {
+		return a.priority - b.priority;
+	});
+
 	console.log(`Added task: \"${task}\" with priority ${priority}`);
 
 	conf.set("todo-list", todoList);
