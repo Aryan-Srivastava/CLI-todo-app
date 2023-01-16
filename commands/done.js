@@ -1,4 +1,5 @@
 const conf = new (require("conf"))();
+const chalk = require("chalk");
 
 function done(tasks) {
     let todoList = conf.get("todo-list");
@@ -10,7 +11,7 @@ function done(tasks) {
         }
         doneList.push(task[0]);
     }
-    console.log("Marked item as done.");
+    console.log(chalk.bold("Marked item as ") + chalk.green('done.'));
     conf.set("todo-list", todoList);
     conf.set("done-list", doneList);
 }

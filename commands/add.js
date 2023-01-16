@@ -1,4 +1,5 @@
 const conf = new (require("conf"))();
+const chalk = require("chalk");
 
 function add(priority, task) {
 	let todoList = conf.get("todo-list");
@@ -17,7 +18,12 @@ function add(priority, task) {
 		return a.priority - b.priority;
 	});
 
-	console.log(`Added task: \"${task}\" with priority ${priority}`);
+	console.log(
+		"Added task: " +
+			chalk.underline.bold.magentaBright(`${task}`) +
+			" with priority " +
+			chalk.blue.bold(`${priority}`)
+	);
 
 	conf.set("todo-list", todoList);
 }
