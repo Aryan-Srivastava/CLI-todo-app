@@ -5,6 +5,7 @@ const list = require("./commands/list");
 const remove = require("./commands/remove");
 const done = require("./commands/done");
 const report = require("./commands/report");
+const clearList = require("./commands/clearList");
 
 const usage = `Usage :-
 $ ./task add 2 hello world    # Add a new item with priority 2 and text "hello world" to the list
@@ -52,5 +53,9 @@ program
 	.description("Report on all tasks")
 	.action(() => report());
 
+program
+	.command("clear")
+	.description("Clear all tasks")
+	.action(() => clearList());
 
 program.parse(process.argv);
